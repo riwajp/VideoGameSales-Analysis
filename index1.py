@@ -8,7 +8,7 @@ dataframe = pd.DataFrame(data)
 
 def sales_by_x(x):
     grp_by_x = dataframe.groupby(x)
-
+    print("Sales By " +x)
     x_sales = {}
     x_arr = []
     sales_arr = []
@@ -26,11 +26,12 @@ def sales_by_x(x):
     plt.xticks(rotation=70)
 
     plt.show()
-# sales_by_x('Platform')
+sales_by_x('Platform')
 
 
 def most_sold_game_by_x(x, region):
     grp_by_x = dataframe.groupby(x)
+    print("Most sold game by:"+x)
     for key, item in grp_by_x:
         max_sales = item[region].max()
         index = item[region].tolist().index(max_sales)
